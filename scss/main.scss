@@ -45,6 +45,30 @@ a {
 	width: 100%;
 }
 
+.landing .quote {
+	position: absolute;
+    right: 5%;
+	bottom: 5%;
+	padding: 2rem;
+	max-width: 16rem;
+
+	p {
+		opacity: .9;
+		margin-bottom: .6rem;
+	}
+
+	p::after {
+	content: "";
+	background: $homelink-color;
+	height: 0.125rem;
+	width: 3.5rem;
+	position: absolute;
+	left: 30%;
+    bottom: 10%;
+    margin: 0 0 0 -3rem;
+	}
+}
+
 nav {
 	display: flex;
 	align-items: center;
@@ -55,6 +79,7 @@ nav {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		cursor: default;
 
 		span {
 			font-family: 'jelani', $font-stack ,cursive;
@@ -64,25 +89,23 @@ nav {
 	
 		img {
 			margin-right: .2rem;
-			width: 2rem;
+			width: 1.8rem;
 		}
 	}
 
 	.nav-links {
+		position: fixed;
+		top: 0;
+		right: 0;
+		padding: 1rem 3rem;
+		z-index: 1000;
 
 		ul {
-			position: fixed;
-			top: 3rem;
-			right: 2.8rem;
-			z-index: 1000;
 			display: none;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
 			list-style: none;
 			
 			li{
-				padding: .5rem 0;
+				padding: 1rem .2rem;
 
 				a {
 					color: $text-color;
@@ -91,23 +114,26 @@ nav {
 					font-weight: 300;
 					letter-spacing: .1rem;
 					&:hover {
-						opacity: .7;
-						border-bottom: 2px solid $homelink-color;
-						padding-bottom: .4rem;
+						opacity: .8;
+						border-bottom: 2px solid $text-color;
+						padding-bottom: .3rem;
 						-webkit-transition: ease-in-out .35s;
 						transition: ease-in-out .35s;
 					}
 				}
+			}
+
+			span {
+				position: absolute;
+				bottom: 1rem;
+				font-size: .9rem;
+				font-family: 'jelani', $font-stack;
 			}
 		}
 	}
 
 	.hamburger {
 		cursor: pointer;
-		position: fixed;
-		top: 1rem;
-		right: 4rem;
-		z-index: 1000;
 
 		div {
 			margin: 0.3125rem 0;
@@ -133,7 +159,32 @@ nav {
 	}
 }
 
+//Hamburger Animation
+.toggle .line1 {
+	transform: rotate(-45deg) translate(-4px, 6px);
+}
 
+.toggle .line2 {
+	opacity: 0;
+}
+
+.toggle .line3 {
+	transform: rotate(45deg) translate(-4px, -6px);
+}
+
+//Nav toggle
+nav .nav-links-active {
+	background: $homelink-color;
+	padding: 1rem;
+	height: 100vh;
+	transition: all .7s ease-in-out;
+}
+
+nav .nav-links .nav-active {
+	display: inline-block;
+}
+
+//Main Home Styles
 .landing-info {
 	position: absolute;
 	top: 50%;
@@ -154,7 +205,7 @@ nav {
 
 	& p {
 		text-transform: uppercase;
-		color: #c9c9c9;
+		opacity: .9;
 		font-weight: 100;
 		margin: 1.5rem auto;
 		font-size: .9rem;
@@ -168,7 +219,6 @@ nav {
 		border: none;
 		position: relative;
 		transition: 1s;
-		-webkit-tap-highlight-color: transparent;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -213,14 +263,8 @@ nav {
 	}
 }
 
-.landing .quote {
-	position: absolute;
-    right: 5%;
-	bottom: 6%;
-	padding: 3rem;
-	max-width: 20rem;
-}
 
+//Main Gallery Styles
 #gallery {
 	margin: 0 6.5%;
 
@@ -253,6 +297,7 @@ nav {
 	min-width: 14rem;
 	max-width: 20rem;
 	width: 100%;
+	overflow: hidden;
 	text-align: left;
 	background-color: transparent;
 	font-size: 1rem;
@@ -268,6 +313,10 @@ nav {
 		transition-delay: 0.2s;
 		-webkit-transition: all 0.3s ease-in;
 		transition: all 0.3s ease-in;
+	}
+
+	&:hover img {
+		transform: scale(1.05) translateY(-5%);
 	}
 
 	.info {
@@ -300,7 +349,7 @@ nav {
 		bottom: 0;
 		outline: none;
     	border: none;
-		padding: .25rem .5rem;
+		padding: .25rem .4rem;
 		color: $base-color;
 		background: $homelink-color;
 		font-family: $font-stack;
@@ -314,18 +363,18 @@ nav {
 	}
 
 	h3 {
-		margin: 0 0 1rem;
+		margin: 0 0 .8rem;
 		font-weight: 700;
 		text-transform: uppercase;
 	}
 
 	h5 {
-		margin-top: -0.9rem;
+		margin-top: -0.7rem;
 	}
 
 	p {
 		position: absolute;
-		opacity: 0;
+		opacity: 1;
 		top: 50%;
 		left: 0;
 		width: 100%;
@@ -337,12 +386,21 @@ nav {
 		-webkit-transition: all 0.3s ease-out;
 		transition: all 0.3s ease-out;
 	}
-
-	&:hover img {
-		
-	}
 }
 
+//image info toggle
+.magic .btn-toggle {
+	background: transparent;
+	border-left: 2px solid $homelink-color;
+	color: $homelink-color;
+}
+
+.magic .info-show {
+	top: 1rem;
+}
+
+
+//Footer styles
 footer {
 	position: absolute;
 	padding: 4rem 0 3rem 2rem;
@@ -362,7 +420,6 @@ footer {
 }
 
 //Media Queries
-
 @media only screen and (max-width: 1100px) {
 	.landing-info {
 		position: absolute;
@@ -377,6 +434,7 @@ footer {
 		margin: 1.5rem .5rem;
 		min-width: 10rem;
 		max-width: 17rem;
+		font-size: .85rem;
 	}	
 }
 
@@ -384,8 +442,8 @@ footer {
 	nav {
 		padding: .75rem 4rem;
 
-		.hamburger {
-			right: 4rem;
+		.nav-links {
+			padding: 1rem 4rem;
 		}
 	}
 
@@ -400,7 +458,7 @@ footer {
 		transform: translate(-50%, -50%);
 		max-width: 30rem;
 		z-index: 10;
-}
+	}
 
 	.landing-info .landing-text span {
 		font-size: 3rem;
@@ -419,6 +477,15 @@ footer {
 	#gallery .gallery-header h1{
 		font-size: 1.8rem;
 	}
+
+	.magic {
+		font-size: .7rem;
+	}
+
+	.magic .info2-show {
+		opacity: 1;
+		top: 27%;
+	}
 }
 
 @media only screen and (max-width: 600px) {
@@ -426,12 +493,7 @@ footer {
 		padding: .75rem 2rem;
 
 		.nav-links {
-			ul {
-				right: 1.8rem;
-			}
-		}
-		.hamburger {
-			right: 3rem;
+			padding: 1rem 3rem;
 		}
 	}
 
@@ -478,13 +540,11 @@ footer {
 		padding: .75rem 1.5rem;
 
 		.nav-links {
-			ul {
-				right: .8rem;
-			}
-		}
+			padding: 1rem 2rem;
 
-		.hamburger {
-			right: 2rem;
+			li {
+				padding: 1rem 0;
+			}
 		}
 	}
 
@@ -499,6 +559,10 @@ footer {
 
 	#gallery .gallery-header h1{
 		font-size: 1.2rem;
+	}
+
+	.magic {
+		font-size: .6rem;
 	}
 
 	footer {
@@ -517,7 +581,6 @@ footer {
 }
 
 // Animations
-
 .jello-horizontal:hover {
 	-webkit-animation: jello-horizontal 0.9s both;
 	        animation: jello-horizontal 0.9s both;
@@ -582,41 +645,4 @@ footer {
 	  -webkit-transform: scale3d(1, 1, 1);
 			  transform: scale3d(1, 1, 1);
 	} 
-}
-
-//Hamburger Animation
-
-.toggle .line1 {
-	transform: rotate(-45deg) translate(-4px, 6px);
-}
-
-.toggle .line2 {
-	opacity: 0;
-}
-
-.toggle .line3 {
-	transform: rotate(45deg) translate(-4px, -6px);
-}
-
-//Nav toggle
-nav .nav-links .nav-active {
-	display: flex;
-}
-
-//image info toggle
-.magic .btn-toggle {
-	bottom: 73%;
-	background: transparent;
-	border-left: 2px solid $homelink-color;
-	color: $homelink-color;	
-}
-
-.magic .info-show {
-	height: 13rem;
-	top: 2rem;
-}
-
-.magic .info2-show {
-	opacity: 1;
-	top: 37%;
 }

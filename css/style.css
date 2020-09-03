@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap");
 @font-face {
   font-family: "jelani";
-  src: url("/fonts/jelani.otf"), url("/fonts/jelani.woff") format("woff");
+  src: url("../fonts/jelani.otf"), url("../fonts/jelani.woff") format("woff");
 }
 * {
   margin: 0;
@@ -47,6 +47,28 @@ a {
   width: 100%;
 }
 
+.landing .quote {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  padding: 2rem;
+  max-width: 16rem;
+}
+.landing .quote p {
+  opacity: 0.9;
+  margin-bottom: 0.6rem;
+}
+.landing .quote p::after {
+  content: "";
+  background: #ffbb3c;
+  height: 0.125rem;
+  width: 3.5rem;
+  position: absolute;
+  left: 30%;
+  bottom: 10%;
+  margin: 0 0 0 -3rem;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -57,6 +79,7 @@ nav .nav-logo {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: default;
 }
 nav .nav-logo span {
   font-family: "jelani", "Josefin Sans", sans-serif, cursive;
@@ -65,21 +88,21 @@ nav .nav-logo span {
 }
 nav .nav-logo img {
   margin-right: 0.2rem;
-  width: 2rem;
+  width: 1.8rem;
+}
+nav .nav-links {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1rem 3rem;
+  z-index: 1000;
 }
 nav .nav-links ul {
-  position: fixed;
-  top: 3rem;
-  right: 2.8rem;
-  z-index: 1000;
   display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   list-style: none;
 }
 nav .nav-links ul li {
-  padding: 0.5rem 0;
+  padding: 1rem 0.2rem;
 }
 nav .nav-links ul li a {
   color: #fff;
@@ -89,18 +112,20 @@ nav .nav-links ul li a {
   letter-spacing: 0.1rem;
 }
 nav .nav-links ul li a:hover {
-  opacity: 0.7;
-  border-bottom: 2px solid #ffbb3c;
-  padding-bottom: 0.4rem;
+  opacity: 0.8;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 0.3rem;
   -webkit-transition: ease-in-out 0.35s;
   transition: ease-in-out 0.35s;
 }
+nav .nav-links ul span {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 0.9rem;
+  font-family: "jelani", "Josefin Sans", sans-serif;
+}
 nav .hamburger {
   cursor: pointer;
-  position: fixed;
-  top: 1rem;
-  right: 4rem;
-  z-index: 1000;
 }
 nav .hamburger div {
   margin: 0.3125rem 0;
@@ -123,6 +148,29 @@ nav .hamburger .line3 {
   height: 0.125rem;
 }
 
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-4px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-4px, -6px);
+}
+
+nav .nav-links-active {
+  background: #ffbb3c;
+  padding: 1rem;
+  height: 100vh;
+  transition: all 0.7s ease-in-out;
+}
+
+nav .nav-links .nav-active {
+  display: inline-block;
+}
+
 .landing-info {
   position: absolute;
   top: 50%;
@@ -142,7 +190,7 @@ nav .hamburger .line3 {
 }
 .landing-info p {
   text-transform: uppercase;
-  color: #c9c9c9;
+  opacity: 0.9;
   font-weight: 100;
   margin: 1.5rem auto;
   font-size: 0.9rem;
@@ -155,7 +203,6 @@ nav .hamburger .line3 {
   border: none;
   position: relative;
   transition: 1s;
-  -webkit-tap-highlight-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -194,14 +241,6 @@ nav .hamburger .line3 {
   border-bottom: 2px solid #ffbb3c;
 }
 
-.landing .quote {
-  position: absolute;
-  right: 5%;
-  bottom: 6%;
-  padding: 3rem;
-  max-width: 20rem;
-}
-
 #gallery {
   margin: 0 6.5%;
 }
@@ -229,6 +268,7 @@ nav .hamburger .line3 {
   min-width: 14rem;
   max-width: 20rem;
   width: 100%;
+  overflow: hidden;
   text-align: left;
   background-color: transparent;
   font-size: 1rem;
@@ -244,6 +284,9 @@ nav .hamburger .line3 {
   transition-delay: 0.2s;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
+}
+.magic:hover img {
+  transform: scale(1.05) translateY(-5%);
 }
 .magic .info {
   position: absolute;
@@ -273,7 +316,7 @@ nav .hamburger .line3 {
   bottom: 0;
   outline: none;
   border: none;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.4rem;
   color: #000;
   background: #ffbb3c;
   font-family: "Josefin Sans", sans-serif;
@@ -285,16 +328,16 @@ nav .hamburger .line3 {
   transform: scale(1.25);
 }
 .magic h3 {
-  margin: 0 0 1rem;
+  margin: 0 0 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 .magic h5 {
-  margin-top: -0.9rem;
+  margin-top: -0.7rem;
 }
 .magic p {
   position: absolute;
-  opacity: 0;
+  opacity: 1;
   top: 50%;
   left: 0;
   width: 100%;
@@ -306,6 +349,17 @@ nav .hamburger .line3 {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
+
+.magic .btn-toggle {
+  background: transparent;
+  border-left: 2px solid #ffbb3c;
+  color: #ffbb3c;
+}
+
+.magic .info-show {
+  top: 1rem;
+}
+
 footer {
   position: absolute;
   padding: 4rem 0 3rem 2rem;
@@ -337,14 +391,15 @@ footer a:hover {
     margin: 1.5rem 0.5rem;
     min-width: 10rem;
     max-width: 17rem;
+    font-size: 0.85rem;
   }
 }
 @media only screen and (max-width: 999px) {
   nav {
     padding: 0.75rem 4rem;
   }
-  nav .hamburger {
-    right: 4rem;
+  nav .nav-links {
+    padding: 1rem 4rem;
   }
 
   .landing .quote {
@@ -377,16 +432,22 @@ footer a:hover {
   #gallery .gallery-header h1 {
     font-size: 1.8rem;
   }
+
+  .magic {
+    font-size: 0.7rem;
+  }
+
+  .magic .info2-show {
+    opacity: 1;
+    top: 27%;
+  }
 }
 @media only screen and (max-width: 600px) {
   nav {
     padding: 0.75rem 2rem;
   }
-  nav .nav-links ul {
-    right: 1.8rem;
-  }
-  nav .hamburger {
-    right: 3rem;
+  nav .nav-links {
+    padding: 1rem 3rem;
   }
 
   .nav-logo img {
@@ -429,11 +490,11 @@ footer a:hover {
   nav {
     padding: 0.75rem 1.5rem;
   }
-  nav .nav-links ul {
-    right: 0.8rem;
+  nav .nav-links {
+    padding: 1rem 2rem;
   }
-  nav .hamburger {
-    right: 2rem;
+  nav .nav-links li {
+    padding: 1rem 0;
   }
 
   .landing-info .landing-text span {
@@ -447,6 +508,10 @@ footer a:hover {
 
   #gallery .gallery-header h1 {
     font-size: 1.2rem;
+  }
+
+  .magic {
+    font-size: 0.6rem;
   }
 
   footer {
@@ -526,38 +591,6 @@ footer a:hover {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
-}
-.toggle .line1 {
-  transform: rotate(-45deg) translate(-4px, 6px);
-}
-
-.toggle .line2 {
-  opacity: 0;
-}
-
-.toggle .line3 {
-  transform: rotate(45deg) translate(-4px, -6px);
-}
-
-nav .nav-links .nav-active {
-  display: flex;
-}
-
-.magic .btn-toggle {
-  bottom: 73%;
-  background: transparent;
-  border-left: 2px solid #ffbb3c;
-  color: #ffbb3c;
-}
-
-.magic .info-show {
-  height: 13rem;
-  top: 2rem;
-}
-
-.magic .info2-show {
-  opacity: 1;
-  top: 37%;
 }
 
 /*# sourceMappingURL=style.css.map */

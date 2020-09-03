@@ -1,18 +1,44 @@
 let hamburger = document.querySelector('.hamburger');
+let navBody = document.querySelector('.nav-links');
 let navLinks = document.getElementById('main-nav');
 let buttons =  document.querySelectorAll('button');
-let info = document.querySelectorAll('.info');
-let info2 = document.querySelectorAll('.info p');
 
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('toggle');
-    navLinks.classList.toggle('nav-active');
+    hamburger.classList.toggle('toggle'); //Toggle Nav icon
+    navLinks.classList.toggle('nav-active'); //Show Nav links
+    navBody.classList.toggle('nav-links-active'); //Show Nav background
 })
 
 buttons.forEach(button => {
-button.addEventListener('click', () => {
-    button.classList.toggle('btn-toggle');
-    info.classList.toggle('info-show');
-    info2.classList.toggle('info2-show');
+    button.addEventListener('click', () => {
+        button.classList.toggle('btn-toggle');
+        button.previousElementSibling.classList.toggle('info-show')})
 });
-})
+
+//Landing entrance
+let tl = gsap.timeline();
+
+  tl.from("nav", {duration: 1.5, opacity: 0, y: -150})
+    .from(".quote", {duration: 1, opacity: 0, y:150})
+    .from(".landing-text", {duration: 1, opacity: 0, x: -150})
+    .from(".view", {duration: 1, opacity: 0, x: -150})
+
+//Gallery scrolltrigger
+let proxy = { skew: 0 },
+    skewSetter = gsap.quickSetter(".skewElem", "skewY", "deg"), // fast
+    clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees. 
+
+ScrollTrigger.create({
+  onUpdate: (self) => {
+    let skew = clamp(self.getVelocity() / -300);
+    // only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to the smaller skew.
+    if (Math.abs(skew) > Math.abs(proxy.skew)) {
+      proxy.skew = skew;
+      gsap.to(proxy, {skew: 0, duration: 0.8, ease: "power3", overwrite: true, onUpdate: () => skewSetter(proxy.skew)});
+    }
+  }
+});
+
+// make the right edge "stick" to the scroll bar. force3D: true improves performance
+gsap.set(".skewElem", {transformOrigin: "right center", force3D: true});
+
