@@ -341,9 +341,9 @@ nav .nav-links .nav-active {
   top: 50%;
   left: 0;
   width: 100%;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   font-weight: 500;
-  margin: 0;
+  margin: -3rem 0 0 0;
   z-index: 1;
   padding: 0 1.9rem;
   -webkit-transition: all 0.3s ease-out;
@@ -393,13 +393,16 @@ footer a:hover {
     max-width: 17rem;
     font-size: 0.85rem;
   }
+  .magic p {
+    margin: -2.5rem 0 0 0;
+  }
 }
 @media only screen and (max-width: 999px) {
   nav {
     padding: 0.75rem 4rem;
   }
   nav .nav-links {
-    padding: 1rem 4rem;
+    padding: 1rem 2rem;
   }
 
   .landing .quote {
@@ -436,6 +439,9 @@ footer a:hover {
   .magic {
     font-size: 0.7rem;
   }
+  .magic p {
+    margin: -1.9rem 0 0 0;
+  }
 
   .magic .info2-show {
     opacity: 1;
@@ -447,7 +453,7 @@ footer a:hover {
     padding: 0.75rem 2rem;
   }
   nav .nav-links {
-    padding: 1rem 3rem;
+    padding: 1rem;
   }
 
   .nav-logo img {
@@ -481,6 +487,9 @@ footer a:hover {
   .magic {
     margin: 1.5rem 0.5rem;
   }
+  .magic p {
+    margin: -1.8rem 0 0 0;
+  }
 
   footer {
     font-size: 0.7rem;
@@ -491,7 +500,7 @@ footer a:hover {
     padding: 0.75rem 1.5rem;
   }
   nav .nav-links {
-    padding: 1rem 2rem;
+    padding: 1rem 0.5rem;
   }
   nav .nav-links li {
     padding: 1rem 0;
@@ -511,6 +520,10 @@ footer a:hover {
   }
 
   .magic {
+    font-size: 0.6rem;
+  }
+  .magic p {
+    margin: -1.6rem 0 0 0;
     font-size: 0.6rem;
   }
 

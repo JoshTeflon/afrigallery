@@ -378,9 +378,9 @@ nav .nav-links .nav-active {
 		top: 50%;
 		left: 0;
 		width: 100%;
-		font-size: 0.8em;
+		font-size: 0.8rem;
 		font-weight: 500;
-		margin: 0;
+		margin:  -3rem 0 0 0;
 		z-index: 1;
 		padding: 0 1.9rem;
 		-webkit-transition: all 0.3s ease-out;
@@ -435,6 +435,10 @@ footer {
 		min-width: 10rem;
 		max-width: 17rem;
 		font-size: .85rem;
+
+		p {
+			margin: -2.5rem 0 0 0;
+		}
 	}	
 }
 
@@ -443,7 +447,7 @@ footer {
 		padding: .75rem 4rem;
 
 		.nav-links {
-			padding: 1rem 4rem;
+			padding: 1rem 2rem;
 		}
 	}
 
@@ -480,6 +484,9 @@ footer {
 
 	.magic {
 		font-size: .7rem;
+		p {
+			margin: -1.9rem 0 0 0;
+		}
 	}
 
 	.magic .info2-show {
@@ -493,7 +500,7 @@ footer {
 		padding: .75rem 2rem;
 
 		.nav-links {
-			padding: 1rem 3rem;
+			padding: 1rem;
 		}
 	}
 
@@ -528,6 +535,9 @@ footer {
 
 	.magic {
 		margin: 1.5rem .5rem;
+		p {
+			margin: -1.8rem 0 0 0;
+		}
 	}
 
 	footer {
@@ -540,7 +550,7 @@ footer {
 		padding: .75rem 1.5rem;
 
 		.nav-links {
-			padding: 1rem 2rem;
+			padding: 1rem .5rem;
 
 			li {
 				padding: 1rem 0;
@@ -563,6 +573,10 @@ footer {
 
 	.magic {
 		font-size: .6rem;
+		p {
+			margin: -1.6rem 0 0 0;
+			font-size: 0.6rem;
+		}
 	}
 
 	footer {

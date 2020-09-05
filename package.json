@@ -1,0 +1,26 @@
+{
+  "name": "afrigallery",
+  "version": "1.0.0",
+  "description": "Image gallery of beautiful African locations",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshTeflon/afrigallery.git"
+  },
+  "keywords": [
+    "Africa",
+    "Image",
+    "Gallery",
+    "Beautiful",
+    "gsap"
+  ],
+  "author": "Enikele Joshua",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshTeflon/afrigallery/issues"
+  },
+  "homepage": "https://github.com/JoshTeflon/afrigallery#readme"
+}

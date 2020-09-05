@@ -4,24 +4,25 @@ let navLinks = document.getElementById('main-nav');
 let buttons =  document.querySelectorAll('button');
 
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('toggle'); //Toggle Nav icon
-    navLinks.classList.toggle('nav-active'); //Show Nav links
-    navBody.classList.toggle('nav-links-active'); //Show Nav background
-})
+    hamburger.classList.toggle('toggle') //Toggle Nav icon
+    navLinks.classList.toggle('nav-active') //Show Nav links
+    navBody.classList.toggle('nav-links-active') //Show Nav background
+});
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        button.classList.toggle('btn-toggle');
+        button.classList.toggle('btn-toggle')
         button.previousElementSibling.classList.toggle('info-show')})
 });
 
 //Landing entrance
 let tl = gsap.timeline();
 
-  tl.from("nav", {duration: 1.5, opacity: 0, y: -150})
-    .from(".quote", {duration: 1, opacity: 0, y:150})
-    .from(".landing-text", {duration: 1, opacity: 0, x: -150})
-    .from(".view", {duration: 1, opacity: 0, x: -150})
+  tl.from(".view", {duration: 1.5, opacity: 0, x: -100, ease: "power3.Out"})
+    .from("nav", {duration: 1.5, opacity: 0, ease: "back.out(1.8)"})
+    .from(".landing-text", {duration: 1, opacity: 0, x: -80, ease: "power3.Out"})
+    .from(".quote", {duration: 1, opacity: 0, y: 50, ease: "power3.Out"})
+    
 
 //Gallery scrolltrigger
 let proxy = { skew: 0 },
