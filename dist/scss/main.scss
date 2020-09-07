@@ -111,14 +111,12 @@ nav {
 					color: $text-color;
 					font-size: .8rem;
 					text-transform: uppercase;
-					font-weight: 300;
+					font-weight: 400;
 					letter-spacing: .1rem;
 					&:hover {
-						opacity: .8;
-						border-bottom: 2px solid $text-color;
-						padding-bottom: .3rem;
-						-webkit-transition: ease-in-out .35s;
-						transition: ease-in-out .35s;
+						color: $base-color;
+						-webkit-transition: ease-in-out .3s;
+						transition: ease-in-out .3s;
 					}
 				}
 			}
