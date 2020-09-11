@@ -51,6 +51,7 @@ a {
 	bottom: 5%;
 	padding: 2rem;
 	max-width: 16rem;
+	visibility: hidden;
 
 	p {
 		opacity: .9;
@@ -74,6 +75,7 @@ nav {
 	align-items: center;
 	justify-content: space-between;
 	padding: .75rem 3rem;
+	visibility: hidden;
 	
 	.nav-logo {
 		display: flex;
@@ -191,14 +193,18 @@ nav .nav-links .nav-active {
 	max-width: 30rem;
 	z-index: 10;
 
-	.landing-text span {
-		display: inline-block;
-		letter-spacing: .25rem;
-		font-size: 3.5rem;
-		font-weight: 900;
-		text-align: center;
-		line-height: 100%;
-		cursor: default;
+	.landing-text {
+		visibility: hidden;
+	
+		span {
+			display: inline-block;
+			letter-spacing: .25rem;
+			font-size: 3.5rem;
+			font-weight: 900;
+			text-align: center;
+			line-height: 100%;
+			cursor: default;
+		}
 	}
 
 	& p {
@@ -222,6 +228,7 @@ nav .nav-links .nav-active {
 		justify-content: center;
 		margin-top: 3rem;
 		cursor: pointer;
+		visibility: hidden;
 	
 		a {
 			color: $base-color;

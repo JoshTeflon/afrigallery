@@ -53,6 +53,7 @@ a {
   bottom: 5%;
   padding: 2rem;
   max-width: 16rem;
+  visibility: hidden;
 }
 .landing .quote p {
   opacity: 0.9;
@@ -74,6 +75,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 3rem;
+  visibility: hidden;
 }
 nav .nav-logo {
   display: flex;
@@ -177,6 +179,9 @@ nav .nav-links .nav-active {
   max-width: 30rem;
   z-index: 10;
 }
+.landing-info .landing-text {
+  visibility: hidden;
+}
 .landing-info .landing-text span {
   display: inline-block;
   letter-spacing: 0.25rem;
@@ -206,6 +211,7 @@ nav .nav-links .nav-active {
   justify-content: center;
   margin-top: 3rem;
   cursor: pointer;
+  visibility: hidden;
 }
 .landing-info .view a {
   color: #000;
