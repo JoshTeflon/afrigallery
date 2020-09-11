@@ -20,7 +20,7 @@ window.onload = () => {
 //Landing entrance
 let tl = gsap.timeline();
 
-  tl.from(".view", {duration: 1.5, opacity: 0, x: -50, autoAlpha:0 , ease: "power3.Out"})
+  tl.from(".view", {duration: 1.5, opacity: 0, x: -100, autoAlpha:0 , ease: "power3.Out"})
     .from(".nav-logo", {duration: 1, opacity: 0, y: -50, autoAlpha:0, ease: "back.out(1.8)"})
     .from(".hamburger", {duration: 1, opacity: 0, y: -50, autoAlpha:0, ease: "back.out(1.8)"})
     .from(".landing-text", {duration: 1, opacity: 0, x: -100, autoAlpha:0, ease: "power3.Out"})
