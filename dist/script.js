@@ -20,9 +20,9 @@ window.onload = () => {
 //Landing entrance
 let tl = gsap.timeline();
 
-  tl.from(".view", {duration: 1.5, opacity: 0, x: -100, autoAlpha:0 , ease: "power3.Out"})
-    .from(".nav-logo", {duration: 1, opacity: 0, y: -100, autoAlpha:0, ease: "back.out(1.8)"})
+  tl.from(".nav-logo", {duration: 1, opacity: 0, y: -100, autoAlpha:0, ease: "back.out(1.8)"})
     .from(".hamburger", {duration: 1, opacity: 0, y: -100, autoAlpha:0, ease: "back.out(1.8)"})
+    .from(".view", {duration: 1.5, opacity: 0, x: -100, autoAlpha:0 , ease: "power3.Out"})
     .from(".landing-text", {duration: 1, opacity: 0, x: -100, autoAlpha:0, ease: "power3.Out"})
     .from(".quote", {duration: 1, opacity: 0, y: 50, autoAlpha:0, ease: "power3.Out"})
 
