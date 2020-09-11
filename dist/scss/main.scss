@@ -75,13 +75,13 @@ nav {
 	align-items: center;
 	justify-content: space-between;
 	padding: .75rem 3rem;
-	visibility: hidden;
 	
 	.nav-logo {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		cursor: default;
+		visibility: hidden;
 
 		span {
 			font-family: 'jelani', $font-stack ,cursive;
@@ -134,6 +134,7 @@ nav {
 
 	.hamburger {
 		cursor: pointer;
+		visibility: hidden;
 
 		div {
 			margin: 0.3125rem 0;
