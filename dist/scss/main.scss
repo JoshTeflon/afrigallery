@@ -22,7 +22,6 @@ html {
 body 
 {
 	background-color: $base-color;
-	font-family: Arial, Helvetica, sans-serif;
 	color: $text-color;
 	font-family: $font-stack;
 	height: 100vh;
@@ -117,8 +116,7 @@ nav {
 					letter-spacing: .1rem;
 					&:hover {
 						color: $base-color;
-						-webkit-transition: ease-in-out .3s;
-						transition: ease-in-out .3s;
+						@include transition(ease-in-out 0.3s);
 					}
 				}
 			}
@@ -138,8 +136,7 @@ nav {
 
 		div {
 			margin: 0.3125rem 0;
-			-webkit-transition: all .3s ease;
-			transition: all .3s ease;
+			@include transition(all 0.3s ease);
 		}
 
 		.line1 {
@@ -161,24 +158,18 @@ nav {
 }
 
 //Hamburger Animation
-.toggle .line1 {
-	transform: rotate(-45deg) translate(-4px, 6px);
-}
+.toggle .line1 { @include transform(rotate(-45deg) translate(-4px, 6px)); }
 
-.toggle .line2 {
-	opacity: 0;
-}
+.toggle .line2 { opacity: 0; }
 
-.toggle .line3 {
-	transform: rotate(45deg) translate(-4px, -6px);
-}
+.toggle .line3 { @include transform(rotate(45deg) translate(-4px, -6px)); }
 
 //Nav toggle
 nav .nav-links-active {
 	background: $homelink-color;
 	padding: 1rem;
 	height: 100vh;
-	transition: all .7s ease-in-out;
+	@include transition(all 0.7s ease-in-out);
 }
 
 nav .nav-links .nav-active {
@@ -247,8 +238,7 @@ nav .nav-links .nav-active {
 			top: 0;
 			left: 50%;
 			overflow: hidden;
-			-webkit-transition: 1s;
-			transition: 1s;
+			@include transition(1s);
 		  }
 		  
 		&:hover {
@@ -317,13 +307,10 @@ nav .nav-links .nav-active {
 		object-fit: cover;
 		-webkit-transition-delay: 0.2s;
 		transition-delay: 0.2s;
-		-webkit-transition: all 0.3s ease-in;
-		transition: all 0.3s ease-in;
+		@include transition(all 0.3s ease-in);
 	}
 
-	&:hover img {
-		transform: scale(1.05) translateY(-5%);
-	}
+	&:hover img { @include transform(scale(1.05) translateY(-5%)); }
 
 	.info {
 		position: absolute;
@@ -333,8 +320,7 @@ nav .nav-links .nav-active {
 		color: $text-color;
 		background-color: $base-color;
 		padding: 1rem 1.5rem 4rem;
-		-webkit-transition: all 0.3s ease-in;
-		transition: all 0.3s ease-in;
+		@include transition(all 0.3s ease-in);
 	}
 
 	.info::before {
@@ -360,12 +346,9 @@ nav .nav-links .nav-active {
 		background: $homelink-color;
 		font-family: $font-stack;
 		cursor: pointer;
-		-webkit-transition: all 0.3s ease;
-		transition: all 0.3s ease;
+		@include transition(all 0.3s ease);
 
-		&:active {
-			transform: scale(1.25);
-		}
+		&:active { @include transform(scale(1.25)); }
 	}
 
 	h3 {
@@ -389,8 +372,7 @@ nav .nav-links .nav-active {
 		margin:  -3rem 0 0 0;
 		z-index: 1;
 		padding: 0 1.9rem;
-		-webkit-transition: all 0.3s ease-out;
-		transition: all 0.3s ease-out;
+		@include transition(all 0.3s ease-out);
 	}
 }
 
@@ -607,62 +589,20 @@ footer {
 }
 
 @-webkit-keyframes jello-horizontal {
-	0% {
-	  -webkit-transform: scale3d(1, 1, 1);
-			  transform: scale3d(1, 1, 1);
-	}
-	30% {
-	  -webkit-transform: scale3d(1.25, 0.75, 1);
-			  transform: scale3d(1.25, 0.75, 1);
-	}
-	40% {
-	  -webkit-transform: scale3d(0.75, 1.25, 1);
-			  transform: scale3d(0.75, 1.25, 1);
-	}
-	50% {
-	  -webkit-transform: scale3d(1.15, 0.85, 1);
-			  transform: scale3d(1.15, 0.85, 1);
-	}
-	65% {
-	  -webkit-transform: scale3d(0.95, 1.05, 1);
-			  transform: scale3d(0.95, 1.05, 1);
-	}
-	75% {
-	  -webkit-transform: scale3d(1.05, 0.95, 1);
-			  transform: scale3d(1.05, 0.95, 1);
-	}
-	100% {
-	  -webkit-transform: scale3d(1, 1, 1);
-			  transform: scale3d(1, 1, 1);
-	}
+	0% { @include transform(scale3d(1, 1, 1)); }
+	30% { @include transform(scale3d(1.25, 0.75, 1)); }
+	40% { @include transform(scale3d(0.75, 1.25, 1)); }
+	50% { @include transform(scale3d(1.15, 0.85, 1)); }
+	65% { @include transform(scale3d(0.95, 1.05, 1)); }
+	75% { @include transform(scale3d(1.05, 0.95, 1)); }
+	100% { @include transform(scale3d(1, 1, 1)); }
 }
 @keyframes jello-horizontal {
-	0% {
-	  -webkit-transform: scale3d(1, 1, 1);
-			  transform: scale3d(1, 1, 1);
-	}
-	30% {
-	  -webkit-transform: scale3d(1.25, 0.75, 1);
-			  transform: scale3d(1.25, 0.75, 1);
-	}
-	40% {
-	  -webkit-transform: scale3d(0.75, 1.25, 1);
-			  transform: scale3d(0.75, 1.25, 1);
-	}
-	50% {
-	  -webkit-transform: scale3d(1.15, 0.85, 1);
-			  transform: scale3d(1.15, 0.85, 1);
-	}
-	65% {
-	  -webkit-transform: scale3d(0.95, 1.05, 1);
-			  transform: scale3d(0.95, 1.05, 1);
-	}
-	75% {
-	  -webkit-transform: scale3d(1.05, 0.95, 1);
-			  transform: scale3d(1.05, 0.95, 1);
-	}
-	100% {
-	  -webkit-transform: scale3d(1, 1, 1);
-			  transform: scale3d(1, 1, 1);
-	} 
+	0% { @include transform(scale3d(1, 1, 1)); }
+	30% { @include transform(scale3d(1.25, 0.75, 1)); }
+	40% { @include transform(scale3d(0.75, 1.25, 1)); }
+	50% { @include transform(scale3d(1.15, 0.85, 1)); }
+	65% { @include transform(scale3d(0.95, 1.05, 1)); }
+	75% { @include transform(scale3d(1.05, 0.95, 1)); }
+	100% { @include transform(scale3d(1, 1, 1)); }
 }

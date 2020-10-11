@@ -24,7 +24,6 @@ html {
 
 body {
   background-color: #000;
-  font-family: Arial, Helvetica, sans-serif;
   color: #fff;
   font-family: "Josefin Sans", sans-serif;
   height: 100vh;
@@ -150,6 +149,8 @@ nav .hamburger .line3 {
 }
 
 .toggle .line1 {
+  -webkit-transform: rotate(-45deg) translate(-4px, 6px);
+  -ms-transform: rotate(-45deg) translate(-4px, 6px);
   transform: rotate(-45deg) translate(-4px, 6px);
 }
 
@@ -158,6 +159,8 @@ nav .hamburger .line3 {
 }
 
 .toggle .line3 {
+  -webkit-transform: rotate(45deg) translate(-4px, -6px);
+  -ms-transform: rotate(45deg) translate(-4px, -6px);
   transform: rotate(45deg) translate(-4px, -6px);
 }
 
@@ -165,6 +168,7 @@ nav .nav-links-active {
   background: #ffbb3c;
   padding: 1rem;
   height: 100vh;
+  -webkit-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
 }
 
@@ -291,6 +295,8 @@ nav .nav-links .nav-active {
   transition: all 0.3s ease-in;
 }
 .magic:hover img {
+  -webkit-transform: scale(1.05) translateY(-5%);
+  -ms-transform: scale(1.05) translateY(-5%);
   transform: scale(1.05) translateY(-5%);
 }
 .magic .info {
@@ -330,6 +336,8 @@ nav .nav-links .nav-active {
   transition: all 0.3s ease;
 }
 .magic button:active {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 .magic h3 {
@@ -553,60 +561,74 @@ footer a:hover {
 @-webkit-keyframes jello-horizontal {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
   30% {
     -webkit-transform: scale3d(1.25, 0.75, 1);
+    -ms-transform: scale3d(1.25, 0.75, 1);
     transform: scale3d(1.25, 0.75, 1);
   }
   40% {
     -webkit-transform: scale3d(0.75, 1.25, 1);
+    -ms-transform: scale3d(0.75, 1.25, 1);
     transform: scale3d(0.75, 1.25, 1);
   }
   50% {
     -webkit-transform: scale3d(1.15, 0.85, 1);
+    -ms-transform: scale3d(1.15, 0.85, 1);
     transform: scale3d(1.15, 0.85, 1);
   }
   65% {
     -webkit-transform: scale3d(0.95, 1.05, 1);
+    -ms-transform: scale3d(0.95, 1.05, 1);
     transform: scale3d(0.95, 1.05, 1);
   }
   75% {
     -webkit-transform: scale3d(1.05, 0.95, 1);
+    -ms-transform: scale3d(1.05, 0.95, 1);
     transform: scale3d(1.05, 0.95, 1);
   }
   100% {
     -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
 }
 @keyframes jello-horizontal {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
   30% {
     -webkit-transform: scale3d(1.25, 0.75, 1);
+    -ms-transform: scale3d(1.25, 0.75, 1);
     transform: scale3d(1.25, 0.75, 1);
   }
   40% {
     -webkit-transform: scale3d(0.75, 1.25, 1);
+    -ms-transform: scale3d(0.75, 1.25, 1);
     transform: scale3d(0.75, 1.25, 1);
   }
   50% {
     -webkit-transform: scale3d(1.15, 0.85, 1);
+    -ms-transform: scale3d(1.15, 0.85, 1);
     transform: scale3d(1.15, 0.85, 1);
   }
   65% {
     -webkit-transform: scale3d(0.95, 1.05, 1);
+    -ms-transform: scale3d(0.95, 1.05, 1);
     transform: scale3d(0.95, 1.05, 1);
   }
   75% {
     -webkit-transform: scale3d(1.05, 0.95, 1);
+    -ms-transform: scale3d(1.05, 0.95, 1);
     transform: scale3d(1.05, 0.95, 1);
   }
   100% {
     -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
 }
