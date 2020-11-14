@@ -15,12 +15,13 @@
     "Image",
     "Gallery",
     "Beautiful",
-    "gsap"
+    "GSAP",
+    "Enikele Joshua"
   ],
   "author": "Enikele Joshua",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JoshTeflon/afrigallery/issues"
   },
-  "homepage": "https://github.com/JoshTeflon/afrigallery#readme"
+  "homepage": "https://afrigallery.netlify.app/"
 }
