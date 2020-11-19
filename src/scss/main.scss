@@ -38,6 +38,40 @@ a {
 	text-decoration: none;
 }
 
+.preloader {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	width: 3.5rem;
+	height: 3.5rem;
+	-webkit-animation: preloader-effect 0.9s both infinite;
+	        animation: preloader-effect 0.9s both infinite;
+	
+	img {
+			-webkit-animation: jello-horizontal 0.9s both infinite;
+					animation: jello-horizontal 0.9s both infinite;
+	}
+}
+
+@keyframes preloader-effect {
+	0% {
+		@include transform(scale(1));
+		border: none;
+		border-radius: 50%;
+	}
+	50% {	
+		border: 1px solid #ff9100;
+		border-radius: 50%;
+		@include transform(scale(1.1));
+    }
+	100% {	
+		border: 1px solid $homelink-color;
+		border-radius: 50%;
+		@include transform(scale(1.15));
+    }
+}
+
 .landing {
 	background: url("../images/bg-img/bg-img.jpg") no-repeat center center/ cover;
 	height: 100vh;

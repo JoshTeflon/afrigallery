@@ -1,3 +1,17 @@
+document.onreadystatechange = function() { 
+  if (document.readyState !== "complete") { 
+      document.querySelector( 
+        "body").style.visibility = "hidden"; 
+      document.querySelector( 
+        ".preloader").style.visibility = "visible"; 
+  } else { 
+      document.querySelector( 
+        ".preloader").style.display = "none"; 
+      document.querySelector( 
+        "body").style.visibility = "visible"; 
+  } 
+}; 
+
 let hamburger = document.querySelector('.hamburger');
 let navBody = document.querySelector('.nav-links');
 let navLinks = document.getElementById('main-nav');

@@ -40,6 +40,44 @@ a {
   text-decoration: none;
 }
 
+.preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3.5rem;
+  height: 3.5rem;
+  -webkit-animation: preloader-effect 0.9s both infinite;
+  animation: preloader-effect 0.9s both infinite;
+}
+.preloader img {
+  -webkit-animation: jello-horizontal 0.9s both infinite;
+  animation: jello-horizontal 0.9s both infinite;
+}
+
+@keyframes preloader-effect {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    border: none;
+    border-radius: 50%;
+  }
+  50% {
+    border: 1px solid #ff9100;
+    border-radius: 50%;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    border: 1px solid #ffbb3c;
+    border-radius: 50%;
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15);
+  }
+}
 .landing {
   background: url("../images/bg-img/bg-img.jpg") no-repeat center center/cover;
   height: 100vh;
