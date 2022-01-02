@@ -369,6 +369,7 @@ nav .nav-links .nav-active {
   color: #000;
   background: #ffbb3c;
   font-family: "Josefin Sans", sans-serif;
+  z-index: 10;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
